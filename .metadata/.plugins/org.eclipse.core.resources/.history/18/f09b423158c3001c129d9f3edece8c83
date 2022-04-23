@@ -1,0 +1,15 @@
+package inscripcionMaterias;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class InscripcionesOkTest {
+
+	@Test
+	public void cumpleCorrelativasOK () throws Exception {
+		Materia materia= new Materia("matematica",[]);
+		
+	}
+
+}

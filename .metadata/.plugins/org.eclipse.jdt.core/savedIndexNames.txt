@@ -1,0 +1,9 @@
+INDEX VERSION 1.131+D:\Usuarios\Nick\Desktop\2022\LINK\github\capacitacion-miniEjercicio\.metadata\.plugins\org.eclipse.jdt.core
+4262227438.index
+1464686006.index
+1012449848.index
+854804509.index
+1786706026.index
+1865797976.index
+1151469391.index
+786365878.index

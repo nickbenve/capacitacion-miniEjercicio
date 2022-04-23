@@ -1,0 +1,14 @@
+package inscripcionMaterias;
+
+@SuppressWarnings("serial")
+public  class NoCumpleCorrelativasException extends Exception {
+
+	private final Curso curso;
+	private final Alumno alumno;
+	
+	public NoCumpleCorrelativasException(Curso curso, Alumno alumno) {
+		super();
+		this.curso = curso;
+		this.alumno = alumno;
+	
+}

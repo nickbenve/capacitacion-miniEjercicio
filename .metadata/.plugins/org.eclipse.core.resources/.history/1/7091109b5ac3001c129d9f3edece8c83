@@ -1,0 +1,6 @@
+package inscripcionMaterias;
+
+
+public class NoCumpleCantidadException extends Exception {
+
+}

@@ -1,0 +1,5 @@
+package inscripcionMaterias;
+
+public final class NoCumpleCorrelativasException extends Exception {
+
+}

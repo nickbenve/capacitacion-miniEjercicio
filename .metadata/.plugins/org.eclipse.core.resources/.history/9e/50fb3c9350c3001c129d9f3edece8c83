@@ -1,0 +1,6 @@
+package inscripcionMaterias;
+
+@SuppressWarnings("serial")
+public  class NoCumpleCorrelativasException extends Exception {
+
+}

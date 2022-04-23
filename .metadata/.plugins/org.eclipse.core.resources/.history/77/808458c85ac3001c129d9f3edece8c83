@@ -1,0 +1,10 @@
+package inscripcionMaterias;
+
+public class Departamento {
+
+	public static abrirCurso(Curso curso) {
+		if(curso.cumpleCantidad()) {
+			
+		}
+	}
+}

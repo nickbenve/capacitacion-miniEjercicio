@@ -1,0 +1,8 @@
+package inscripcionMaterias;
+
+@SuppressWarnings("serial")
+public class NoCumpleCantidadException extends Exception {
+
+
+
+}

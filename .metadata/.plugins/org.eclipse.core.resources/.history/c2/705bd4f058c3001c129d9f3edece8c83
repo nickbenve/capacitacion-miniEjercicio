@@ -1,0 +1,25 @@
+package inscripcionMaterias;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
+import org.junit.jupiter.api.Test;
+
+class InscripcionesOkTest {
+
+	@Test
+	public void cumpleCorrelativasOK () throws Exception {
+		ArrayList<Materia> correlativasVacias= new ArrayList<Materia>();
+		Materia materia= new Materia("analsis Uno",correlativasVacias); 
+		Materia materia2= new Materia("algebra",correlativasVacias); 
+		ArrayList<Materia> correlativasMat2= new ArrayList<Materia>();
+		correlativasMat2= {materia,materia2};
+		Materia materia3= new Materia("analsis Uno",correlativasMat1); 
+		
+		
+		
+	}
+
+}
