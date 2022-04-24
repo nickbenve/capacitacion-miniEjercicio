@@ -4,6 +4,7 @@ package inscripcionMaterias;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.function.BooleanSupplier;
 
 public class Curso {
 	private int minimoRequerido;
@@ -16,6 +17,7 @@ public class Curso {
 	
 	public Curso(int minimoRequerido, int anio, int cuatrimestre, Materia materia) {
 		super();
+		this.minimoRequerido= minimoRequerido;
 		alumnosInscriptos = new ArrayList<Alumno>();
 		this.setAnio(anio);
 		this.setCuatrimestre(cuatrimestre);
@@ -29,17 +31,12 @@ public class Curso {
 	}
 
 
-	public void agregarAlumno(Alumno alumno) throws  NoCumpleCorrelativasException {
-		
-		if(this.cumpleCorrelativas(alumno)) {
-			this.alumnosInscriptos.add(alumno);
-		}else {
-			throw new NoCumpleCorrelativasException("le faltan correlativas");
-		}
+	public void agregarAlumno(Alumno alumno)  {
+		this.alumnosInscriptos.add(alumno);
 	}
 
 
-	private boolean cumpleCorrelativas(Alumno alumno) {
+	public boolean cumpleCorrelativas(Alumno alumno) {
 		for(Materia materia: materia.getCorrelativas()) {
 			if(!alumno.getMateriasQueAprobo().contains(materia)) {
 				return false;
@@ -81,16 +78,38 @@ public class Curso {
 	public void activarCurso() {
 		this.estado=true;
 	}
+	public int cantidad() {
+		return alumnosInscriptos.size();
+	}
 	
 	public boolean cumpleCantidad() throws NoCumpleCantidadException {
 		if(alumnosInscriptos.size()>this.getMinimoRequerido()) {
 			this.activarCurso();
 		}else {
 			throw new NoCumpleCantidadException("No es suficiente la cantidad de inscriptos");
+			
 		}
 		return false;
 	}
+	
+	public Collection<Alumno> getInscriptos() {
+		return this.alumnosInscriptos;
+	}
 
+
+	
+	public boolean estaInscripto(Alumno alumno) {
+		return this.getInscriptos().contains(alumno);
+	}
+
+	public boolean estadoActual() {
+		return estado;
+	}
+	
+
+
+
+	
 
 	
 }

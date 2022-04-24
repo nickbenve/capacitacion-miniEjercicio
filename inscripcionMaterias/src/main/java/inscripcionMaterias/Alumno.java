@@ -8,12 +8,21 @@ public class Alumno {
 	Collection<Materia> materiasQueAprobo; 
 					
 
-	public Alumno(String nombre,Collection<Materia> materiasQueAproboElAlumno) {
+	public Alumno(String nombre, Collection<Materia> materiasAprobadas) {
 		super();
 		this.setNombre(nombre);
 		materiasQueAprobo=new ArrayList<Materia>();
-		materiasQueAprobo=materiasQueAproboElAlumno;
+		materiasQueAprobo=materiasAprobadas;
+
 	}
+
+	
+
+	private void setNombre(String nombre2) {
+		this.nombre=nombre2;
+		
+	}
+
 
 
 	public Collection<Materia> getMateriasQueAprobo() {
@@ -26,15 +35,22 @@ public class Alumno {
 	}
 
 
-	public String getNombre() {
-		return nombre;
+
+
+	
+	
+	public void inscribirse(Curso curso) throws NoCumpleCorrelativasException {
+				
+		if(curso.cumpleCorrelativas(this)) {
+			curso.agregarAlumno(this);
+		
+		}else {
+			throw new NoCumpleCorrelativasException("le faltan correlativas");
+		}
 	}
 
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
+	
 
 
 	
