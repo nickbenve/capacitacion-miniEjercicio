@@ -37,12 +37,13 @@ public class Curso {
 
 
 	public boolean cumpleCorrelativas(Alumno alumno) {
-		for(Materia materia: materia.getCorrelativas()) {
-			if(!alumno.getMateriasQueAprobo().contains(materia)) {
-				return false;
-			};
-		}
-		return true;
+		
+		
+		
+		return alumno.getMateriasQueAprobo().containsAll(materia.getCorrelativas());
+	
+		
+		
 	}
 
 
