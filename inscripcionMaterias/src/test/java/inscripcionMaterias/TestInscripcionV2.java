@@ -1,16 +1,18 @@
 package inscripcionMaterias;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
 import org.junit.jupiter.api.Test;
 
-public class TestInscripcion {
+public  class TestInscripcionV2 {
+
 	
 	@Test()
-	public void inscripcionNoOkFaltaCorrelativas() throws Exception{
+	public void inscripcionNoOkFaltaCorrelativass() throws Exception{
 		
 		Collection<Materia> materiasAprobadas= new ArrayList<Materia>();
 		Alumno alumno= new Alumno("roberto", materiasAprobadas);
@@ -26,17 +28,10 @@ public class TestInscripcion {
 	    assertThrows(NoCumpleCorrelativasException.class,
 	    		()->{
 	    			alumno.inscribirse(curso2); 
-	    		});
-	  
-	    
-	    
-
-	 
-	
-	   
+	    		});  
 	}
-	@Test
-	public void inscripcionOk() throws Exception{
+	@Test()
+	public void inscripcionOkk() throws Exception{
 		
 		Collection<Materia> materiasAprobadas= new ArrayList<Materia>();
 		Alumno alumno= new Alumno("roberto", materiasAprobadas);
@@ -54,7 +49,4 @@ public class TestInscripcion {
 	    
 	  
 	}
-	
-	
-	
 }
